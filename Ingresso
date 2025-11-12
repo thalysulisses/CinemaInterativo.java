@@ -1,0 +1,29 @@
+public class Ingresso {
+    private Filme filme;
+    private String tipo;
+    private String horario;
+    private double valor;
+
+    public Ingresso(Filme filme, String tipo, String horario) {
+        this.filme = filme;
+        this.tipo = tipo;
+        this.horario = horario;
+        if (tipo.equalsIgnoreCase("inteira")) {
+            this.valor = 24.0;
+        } else {
+            this.valor = 12.0;
+        }
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void exibirResumo() {
+        System.out.println("\n--- RESUMO DO PEDIDO ---");
+        System.out.println("Filme: " + filme.getNome());
+        System.out.println("Sessão: " + horario);
+        System.out.println("Tipo: " + tipo);
+        System.out.printf("Valor: R$ %.2f%n", valor);
+    }
+}
